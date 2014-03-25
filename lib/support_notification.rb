@@ -13,9 +13,6 @@ class SupportNotification
   @queue = "support"
 
   def self.perform(message, requested_at)
-    # Ignore old support requests
-    return unless requested_at >= 10.minutes.ago
-
     new(message).deliver
   end
 
