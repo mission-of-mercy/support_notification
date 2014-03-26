@@ -7,3 +7,7 @@ gem 'prowl'
 group :development do
   gem 'dotenv'
 end
+
+group :test do
+  gem 'minitest'
+end

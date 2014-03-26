@@ -7,6 +7,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.1)
+    minitest (5.3.1)
     mono_logger (1.1.0)
     multi_json (1.9.2)
     multi_xml (0.5.5)
@@ -39,6 +40,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  minitest
   prowl
   resque (~> 1.25.2)
   twilio
