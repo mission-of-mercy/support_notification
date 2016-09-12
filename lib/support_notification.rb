@@ -25,6 +25,7 @@ class SupportNotification
   def deliver
     twilio
     prowl
+    slack
   end
 
   def twilio
@@ -47,6 +48,10 @@ class SupportNotification
     end
   end
 
+  def slack
+    `curl -X POST --data-urlencode 'payload={"channel": "#ctmom_2016", "username": "webhookbot", "text": "<!channel> Support requested at #{message}", "icon_emoji": ":poop:"}' #{slack_url}`
+  end
+
   private
 
   def phone_numbers
@@ -55,5 +60,9 @@ class SupportNotification
 
   def prowl_api_keys
     ENV['PROWL_API_KEYS'].to_s.split(",")
+  end
+
+  def slack_url
+    ENV['SLACK_URL']
   end
 end
